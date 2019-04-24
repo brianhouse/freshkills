@@ -11,12 +11,13 @@ with open('vegetation.json') as f:
 metric = 'percent live plant'
 
 ids = list(set([item['plot id'] for item in data]))
-# ids = ['E3'] # n5 n6 n7 n10 e3 e9 e10
+ids = ['E3'] # n5 n6 n7 n10 e3 e9 e10
 signals = []
 for id in ids:
     signal = [item[metric] for item in data if item['plot id'] == id]
     ts = [item['t'] for item in data if item['plot id'] == id]
-    signal = normalize(signal, 0, 100)
+    # signal = normalize(signal, 0, 100)
+    signal = normalize(signal)
     # signal = normalize(signal)
     signal = resample(ts, signal, 1000)
     signal = smooth(signal, 200)
