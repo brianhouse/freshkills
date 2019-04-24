@@ -3,6 +3,7 @@ import numpy as np
 from dateutil import parser
 from . import drawing
 from .colors import colors
+from .config import config
 
 def as_numeric(s):
     if type(s) == int or type(s) == float or type(s) == bool:
