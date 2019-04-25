@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
-import csv, json
+import csv, json, sys, os
+sys.path.append(os.path.join(os.path.dirname(__file__), ".."))
 import numpy as np
 from datetime import timedelta
 from util import *
