@@ -26,12 +26,6 @@ for id in ids:
 # signal = np.mean(signals, axis=0)
 # print(signal)
 
-ctx = drawing.Context(1200, 500)
-for s, signal in enumerate(signals):
-    ctx.plot(signal, stroke=colors[s], thickness=2.0)
-# ctx.plot(signal, stroke=colors[0])
-ctx.output('seasonal_vegetation.png')
-
 save('seasonal_vegetation.pkl', signals)
 
 # n1 = [item['t'] for item in data if item['plot id'] == 'N1']

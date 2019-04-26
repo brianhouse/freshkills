@@ -27,9 +27,4 @@ signal = resample([i for i in range(len(signal))], signal, 1000)
 signal = smooth(signal, 20)
 signals = [signal]
 
-ctx = drawing.Context(1200, 500)
-for s, signal in enumerate(signals):
-    ctx.plot(signal, stroke=colors[s], thickness=2.0)
-ctx.output('monthly_tides.png')
-
 save('monthly_tides.pkl', signals)
