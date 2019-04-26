@@ -42,4 +42,4 @@ while True:
         f.write(',' + result)
 
 
-    time.sleep(5 * 1000)
+    time.sleep(5 * 60)
