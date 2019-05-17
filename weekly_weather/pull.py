@@ -24,9 +24,4 @@ for param in ['temperatureHigh', 'precipProbability', 'humidity']:
     signal = smooth(signal, 200)
     signals.append(signal)
 
-ctx = drawing.Context(1200, 500)
-for s, signal in enumerate(signals):
-    ctx.plot(signal, stroke=colors[s], thickness=2.0)
-ctx.output('weekly_weather.png')
-
 save('weekly_weather.pkl', signals)

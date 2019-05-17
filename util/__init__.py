@@ -1,4 +1,4 @@
-import pytz, calendar, pickle
+import pytz, calendar, pickle, math
 import numpy as np
 from dateutil import parser
 from . import drawing
@@ -29,6 +29,9 @@ def normalize(signal, minimum=None, maximum=None):
     signal = np.clip(signal, 0.0, 1.0)
     return signal    
 
+def guess_period(ts):
+    return np.median([ts[i+1] - ts[i] for i in range(len(ts) - 1)])
+    
 def resample(ts, values, num_samples=None):
     assert np.all(np.diff(ts) >= 0)
     if num_samples == None:

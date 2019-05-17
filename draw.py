@@ -5,7 +5,7 @@ import numpy as np
 from datetime import timedelta
 from util import *
 
-strata = ['seasonal_vegetation', 'monthly_tides', 'weekly_weather']
+strata = ['seasonal_vegetation', 'monthly_tides', 'weekly_weather', 'daily_traffic']
 
 for level in strata:
     signals = load('%s/%s.pkl' % (level, level))
