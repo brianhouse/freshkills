@@ -7,18 +7,20 @@ from util import *
 secret_key = config['darksky']
 latitude, longitude = 40.577098, -74.185990
 
-url = 'https://api.darksky.net/forecast/%s/%s,%s?exclude=currently,minutely,hourly,alerts,flags' % (secret_key, latitude, longitude)
+url = 'https://api.darksky.net/forecast/%s/%s,%s?exclude=currently,minutely,alerts,flags' % (secret_key, latitude, longitude)
 
 r = requests.get(url)
 
 data = r.json()
 days = data['daily']['data']
 
-# print(json.dumps(data, indent=4))
+print(json.dumps(days, indent=4))
 
 signals = []
-for param in ['temperatureHigh', 'precipProbability', 'humidity']:
+# for param in ['temperatureHigh', 'precipProbability', 'humidity']:
+for param in ['temperatureHigh']:    
     signal = [day[param] for day in days]
+    print(signal)
     signal = normalize(signal)
     signal = resample([i for i in range(len(signal))], signal, 1000)
     signal = smooth(signal, 200)

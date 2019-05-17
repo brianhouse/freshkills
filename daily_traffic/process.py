@@ -19,6 +19,8 @@ for datum in data:
 # print(signal)
 
 signal = normalize(signal)
+# signal *= -1
+# signal += 1
 
 signal = resample(ts, signal, 1000)
 signal = smooth(signal, 20)
