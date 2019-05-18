@@ -23,11 +23,11 @@ signal = normalize(signal)
 # signal += 1
 
 signal = resample(ts, signal, 1000)
-signal = smooth(signal, 20)
+# signal = smooth(signal, 20)
 
 
-# ctx = drawing.Context(1200, 500)
-# ctx.plot(signal, stroke=colors[0], thickness=2.0)
-# ctx.output('test.png')
+ctx = drawing.Context(1200, 500)
+ctx.plot(signal, stroke=colors[0], thickness=2.0)
+ctx.output('test.png')
 
 save('daily_traffic.pkl', [signal])

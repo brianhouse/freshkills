@@ -1,0 +1,20 @@
+{
+    "TMC": {
+        "PC": 19271,                        // place code?
+        "DE": "RT-440/Muldoon Ave",         // destination?
+        "QD": "+",                          // queing direction (turns '-' when bad)
+        "LE": 0.21224                       // length?
+    },
+    "CF": {                         // current flow
+        "TY": "TR",
+        "SP": 29.83,                // average speed, clamped at speed limit
+        "SU": 39.79,                // average speed, uncut
+        "FF": 29.83,                // ? appears to also be a speed metric
+        "JF": 0.0,                  // "jam factor"
+        "CN": 0.86                  // confidence attribute
+    },
+    "time": "2019-04-25T23:56:46Z"
+}
+
+
+// https://developer.here.com/documentation/traffic/topics/common-acronyms.html

@@ -5,7 +5,7 @@ import numpy as np
 from datetime import timedelta
 from util import *
 
-strata = ['seasonal_vegetation', 'monthly_tides', 'weekly_weather', 'daily_traffic', 'generational_decay']
+strata = ['seasonal_vegetation', 'monthly_tides', 'weekly_weather', 'daily_energy', 'generational_decay']
 
 master = drawing.Context(1200, 500)
 
